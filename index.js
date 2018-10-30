@@ -257,9 +257,7 @@ class Search extends PureComponent {
         ref="searchContainer"
         style={[
           styles.container,
-          this.props.backgroundColor && {
-            backgroundColor: this.props.backgroundColor
-          }
+          this.props.containerStyle
         ]}
         onLayout={this.onLayout}
       >
@@ -449,6 +447,7 @@ const getStyles = (inputHeight, isRtl) => {
  * Props
  */
 Search.propTypes = {
+  containerStyle: PropTypes.object,
   /**
    * onFocus
    * return a Promise
@@ -492,7 +491,6 @@ Search.propTypes = {
   /**
    * styles
    */
-  backgroundColor: PropTypes.string,
   placeholderTextColor: PropTypes.string,
   titleCancelColor: PropTypes.string,
   tintColorSearch: PropTypes.string,
